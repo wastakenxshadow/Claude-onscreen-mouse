@@ -30,6 +30,7 @@ jobs:
           gradle-version: '7.5'
 
       - name: Build release APK
+        working-directory: ${{ github.workspace }}
         run: gradle :app:assembleRelease
 
       - name: Upload APK
