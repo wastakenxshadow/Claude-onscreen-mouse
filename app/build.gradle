@@ -1,0 +1,31 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.floatingmouse"
+        minSdk        21   // Android 5.0
+        targetSdk     22   // Keep at 22 — SYSTEM_ALERT_WINDOW auto-granted on Android 5
+        versionCode   1
+        versionName   "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled   false
+            signingConfig   signingConfigs.debug  // debug-signed for sideloading
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // No external dependencies needed
+}
